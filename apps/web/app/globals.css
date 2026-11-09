@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--ink:222 40% 12%;--muted:215 16% 46%;--panel:0 0% 100%;--line:214 25% 90%;--brand:252 72% 57%;--accent:165 72% 42%;}
+.dark{--ink:210 40% 96%;--muted:215 18% 67%;--panel:222 32% 11%;--line:217 25% 20%;--brand:252 82% 68%;--accent:165 72% 46%;}
+*{border-color:hsl(var(--line))} body{color:hsl(var(--ink));background:radial-gradient(circle at 80% -10%,rgba(99,102,241,.12),transparent 35%),#f7f8fb;min-height:100vh}.dark body{background:#080d19}
+@layer components{
+ .card{@apply rounded-2xl border bg-panel p-5 shadow-soft}
+ .btn{@apply inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-brand/40 disabled:opacity-50}
+ .btn-primary{@apply btn bg-brand text-white hover:brightness-110}
+ .btn-secondary{@apply btn border bg-panel hover:bg-slate-50 dark:hover:bg-white/5}
+ .input{@apply w-full rounded-xl border bg-transparent px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-brand/30}
+ .label{@apply mb-1.5 block text-sm font-medium}
+ .eyebrow{@apply text-xs font-bold uppercase tracking-[.18em] text-brand}
+}
+
